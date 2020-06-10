@@ -9,18 +9,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Main2Activity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".JogoActivity" />
+
+        <activity android:name=".JogoActivity"
+        android:parentActivityName=".MainActivity" />
         <activity
             android:name=".TabuadaActivity"
-            android:parentActivityName=".EscolhatabuadaActivity" />
-        <activity android:name=".EscolhatabuadaActivity">
+            android:parentActivityName=".MainActivity33" />
+
+        <activity android:name=".MainActivity33"
+                  android:parentActivityName=".MainActivity" >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class EscolhatabuadaActivity extends AppCompatActivity {
+public class MainActivity33 extends AppCompatActivity {
 
     private Button tabuada2;
     private Button tabuada3;
@@ -28,9 +28,12 @@ public class EscolhatabuadaActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_escolhaTabuada);
+        setContentView(R.layout.activity_main33);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true); //Mostrar o botão
+        getSupportActionBar().setHomeButtonEnabled(true);      //Ativar o botão
         getSupportActionBar().setTitle("Estudo da Tabuada");     //Titulo para ser exibido na sua Action Bar em frente à seta
+
 
         tabuada2 = findViewById(R.id.tabuada2);
         tabuada3 = findViewById(R.id.tabuada3);
