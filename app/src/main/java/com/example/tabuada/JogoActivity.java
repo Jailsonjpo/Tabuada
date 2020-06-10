@@ -32,6 +32,8 @@ public class JogoActivity extends AppCompatActivity {
 
         pergunta();
     }
+    //kjk
+
 
     public void pergunta(){
 
