@@ -11,16 +11,13 @@
         android:id="@+id/textPergunta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="32dp"
         android:textColor="@android:color/background_light"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonResposta2"
+        app:layout_constraintBottom_toTopOf="@+id/buttonResposta1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.665"
         tools:text="teste" />
 
     <Button
@@ -29,35 +26,13 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="26dp"
         android:layout_marginRight="26dp"
+        android:onClick="verificaResposta"
         android:text="23"
         app:layout_constraintBottom_toBottomOf="@+id/buttonResposta2"
         app:layout_constraintEnd_toStartOf="@+id/buttonResposta2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/buttonResposta2" />
-
-    <Button
-        android:id="@+id/buttonResposta2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginBottom="46dp"
-        android:text="16"
-        app:layout_constraintBottom_toTopOf="@+id/buttonResposta4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/buttonResposta1" />
-
-    <Button
-        android:id="@+id/buttonResposta3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="27dp"
-        android:layout_marginRight="27dp"
-        android:text="34"
-        app:layout_constraintEnd_toStartOf="@+id/buttonResposta4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonResposta1" />
+        app:layout_constraintTop_toTopOf="@+id/buttonResposta2"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/buttonResposta4"
@@ -65,10 +40,52 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="4dp"
         android:layout_marginRight="4dp"
-        android:layout_marginBottom="309dp"
+        android:layout_marginBottom="164dp"
+        android:onClick="verificaResposta"
         android:text="56"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/buttonResposta3" />
+
+    <Button
+        android:id="@+id/buttonResposta3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="27dp"
+        android:layout_marginRight="27dp"
+        android:onClick="verificaResposta"
+        android:text="34"
+        app:layout_constraintEnd_toStartOf="@+id/buttonResposta4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonResposta1" />
+
+    <Button
+        android:id="@+id/buttonResposta2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="40dp"
+        android:onClick="verificaResposta"
+        android:text="16"
+        app:layout_constraintBottom_toTopOf="@+id/buttonResposta4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonResposta1" />
+
+    <TextView
+        android:id="@+id/countLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="32dp"
+        android:text="TextView"
+        android:textColor="@android:color/background_light"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/textPergunta"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

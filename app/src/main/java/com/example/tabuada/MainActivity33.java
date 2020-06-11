@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 public class MainActivity33 extends AppCompatActivity {
 
@@ -22,8 +21,6 @@ public class MainActivity33 extends AppCompatActivity {
    // private TextView textViewResultado;
 
     private int tabu;
-    private Button buttonSair;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +30,6 @@ public class MainActivity33 extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); //Mostrar o botão
         getSupportActionBar().setHomeButtonEnabled(true);      //Ativar o botão
         getSupportActionBar().setTitle("Estudo da Tabuada");     //Titulo para ser exibido na sua Action Bar em frente à seta
-
 
         tabuada2 = findViewById(R.id.tabuada2);
         tabuada3 = findViewById(R.id.tabuada3);
@@ -45,18 +41,6 @@ public class MainActivity33 extends AppCompatActivity {
         tabuada9 = findViewById(R.id.tabuada9);
         tabuada10 = findViewById(R.id.tabuada10);
 
-        buttonSair = findViewById(R.id.buttonSair);
-
-        buttonSair.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getBaseContext(), "Obrigado por usar o App volte sempre!", Toast.LENGTH_SHORT).show();
-                finish();
-            }
-        });
-
-       // textViewResultado = findViewById(R.id.textViewResultado);
-
     }
 
     public void tabuada(View view){
@@ -66,7 +50,6 @@ public class MainActivity33 extends AppCompatActivity {
             case(R.id.tabuada2): tabu = 2;
                 mostrarTabuada();
             break;
-
             case(R.id.tabuada3): tabu = 3;
                 mostrarTabuada();
                 break;
@@ -76,7 +59,6 @@ public class MainActivity33 extends AppCompatActivity {
             case(R.id.tabuada5): tabu = 5;
                 mostrarTabuada();
                 break;
-
             case(R.id.tabuada6): tabu = 6;
                 mostrarTabuada();
                 break;
@@ -103,8 +85,6 @@ public class MainActivity33 extends AppCompatActivity {
             startActivity(intent);
 
         }
-
-
         //String tabu = tabuada2 .getText().toString();
 
        // String resultado = "";
