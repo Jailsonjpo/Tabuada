@@ -36,10 +36,10 @@
         android:id="@+id/button"
         android:layout_width="140dp"
         android:layout_height="50dp"
+        android:layout_marginTop="80dp"
         android:onClick="returnTop"
-        android:text="Return"
-        android:textSize="18sp"
-        android:layout_marginTop="80dp"/>
+        android:text="Voltar"
+        android:textSize="18sp" />
 
 
 </LinearLayout>

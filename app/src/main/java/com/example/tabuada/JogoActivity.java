@@ -25,6 +25,8 @@ public class JogoActivity extends AppCompatActivity {
     private Button buttonResposta4;
     private TextView textPergunta;
 
+    private int v[];
+
     private String rightAnswer;
     private int rightAnswerCount = 0;
     private int quizCount = 1;
@@ -32,21 +34,33 @@ public class JogoActivity extends AppCompatActivity {
 
     ArrayList<ArrayList<String>> quizArray = new ArrayList<>();
 
-    String quizData[][] =  {
+    Random r = new Random();
 
-            {"4 x 4", "16","34","44","40"},
-            {"5 x 4", "20","34","23","63"},
-            {"9 x 3", "27","56","63","54"},
-            {"3 x 3", "9","29","66","23"},
-            {"6 x 5", "30","45","23","34"},
-            {"7 x 7", "49","35","56","22"},
-            {"8 x 8", "64","56","81","17"},
-            {"2 x 10", "20","25","45","78"},
-            {"2 x 7", "14","34","53","78"},
-            {"2 x 9", "18","14","56","81"},
+        int min = 1;
+        int max = 10;
 
-    };
+        int num1 = r.nextInt((max - min)+ 1) + min;
+        int num2 = r.nextInt((max - min)+ 1) + min;
 
+    String num11 = num1 + "X" + num2;
+    int resp = num1 * num2;
+
+        int min2 = 1;
+        int max2 = num1*10;
+
+        int num3 = r.nextInt((max2 - min2 )+ 1) + min;
+        int num4 = r.nextInt((max2 - min2 )+ 1) + min;
+        int num5 = r.nextInt((max2 - min2 )+ 1) + min;
+
+
+
+     //   quizData.add("")
+    /*public void setQuizData(String[][] quizData) {
+        this.quizData = quizData;
+    }
+*/
+
+    //  }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +73,59 @@ public class JogoActivity extends AppCompatActivity {
         buttonResposta3 = (Button) findViewById(R.id.buttonResposta3);
         buttonResposta4 = (Button) findViewById(R.id.buttonResposta4);
         textPergunta = findViewById(R.id.textPergunta);
+
+        /*for(int i = 0; i<5; i++){
+
+            {num1, num2, num3, num4}
+        }*/
+       // ArrayList<String> quizData = new ArrayList<>();
+
+        //quizData.add(quizData[i][0]);
+
+
+
+       // String respale = "";
+      /*  for (int i = 0; i < 10; i++) {
+
+            for (int k = 0; K < 10; k++) {
+
+            String respale [][]= {
+                    {"5", "5", "5", "5", "5",}
+            };
+            };*/
+
+            // for (int k = i; K < 10; k++) {
+
+
+        //    }
+        //}
+
+        /*  public void preencheV()
+        {*/
+            v = new int[10]; //inicializa o array com 10 posições
+            for(int i=0;i<v.length;i++)   // troquei > por <
+            {
+                v[i] = (int)(Math.random() *10); // atribui o valoor aleatório à posição i
+            }
+
+      //  }
+
+        String quizData[][] = {
+
+        {num11, String.valueOf(resp), String.valueOf(v), String.valueOf(v), String.valueOf(v)},
+               /* {num11, String.valueOf(resp), String.valueOf(num3), String.valueOf(num4), String.valueOf(num5)},
+                {num11, String.valueOf(resp), String.valueOf(num3), String.valueOf(num4), String.valueOf(num5)},*/
+                /* {"5 x 4", "20","34","23","63"},
+                 {"9 x 3", "27","56","63","54"},
+                 {"3 x 3", "9","29","66","23"},
+                 {"6 x 5", "30","45","23","34"},
+                 {"7 x 7", "49","35","56","22"},
+                 {"8 x 8", "64","56","81","17"},
+                 {"2 x 10", "20","25","45","78"},
+                 {"2 x 7", "14","34","53","78"},
+                 {"2 x 9", "18","14","56","81"},*/
+
+        };
 
         for(int i = 0; i <quizData.length; i++){
             //Prepare array
