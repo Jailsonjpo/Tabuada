@@ -9,12 +9,15 @@ import android.os.Bundle;
 import android.util.SparseIntArray;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class JogoActivity extends AppCompatActivity {
 
@@ -25,12 +28,16 @@ public class JogoActivity extends AppCompatActivity {
     private Button buttonResposta4;
     private TextView textPergunta;
 
+    private ProgressBar progressBarHorizontal;
+    private int progresso = 0;
+    int counter = 0;
+
     private int v[];
 
     private String rightAnswer;
     private int rightAnswerCount = 0;
     private int quizCount = 1;
-    static final private int QUIZ_COUNT = 10;
+    static final private int QUIZ_COUNT = 5;
 
     ArrayList<ArrayList<String>> quizArray = new ArrayList<>();
 
@@ -73,6 +80,7 @@ public class JogoActivity extends AppCompatActivity {
         buttonResposta3 = (Button) findViewById(R.id.buttonResposta3);
         buttonResposta4 = (Button) findViewById(R.id.buttonResposta4);
         textPergunta = findViewById(R.id.textPergunta);
+        progressBarHorizontal = findViewById(R.id.progressBarHorizontal);
 
         /*for(int i = 0; i<5; i++){
 
@@ -112,10 +120,23 @@ public class JogoActivity extends AppCompatActivity {
 
         String quizData[][] = {
 
-        {num11, String.valueOf(resp), String.valueOf(v), String.valueOf(v), String.valueOf(v)},
+                {num11, String.valueOf(resp), String.valueOf(num3), String.valueOf(num4), String.valueOf(num5)},
                /* {num11, String.valueOf(resp), String.valueOf(num3), String.valueOf(num4), String.valueOf(num5)},
                 {num11, String.valueOf(resp), String.valueOf(num3), String.valueOf(num4), String.valueOf(num5)},*/
-                /* {"5 x 4", "20","34","23","63"},
+
+                {"2 x 1", "2","34","23","63"},
+                {"2 x 2", "4","6","9","54"},
+                {"2 x 3", "6","29","12","23"},
+                {"2 x 4", "8","45","23","34"},
+                {"2 x 5", "10","15","56","22"},
+                {"2 x 6", "12","56","8","17"},
+                {"2 x 7", "14","25","15","78"},
+                {"2 x 8", "16","34","57","78"},
+                {"2 x 9", "18","14","56","81"},
+                {"2 x 10", "20","14","37","81"}
+
+
+                 /*{"5 x 4", "20","34","23","63"},
                  {"9 x 3", "27","56","63","54"},
                  {"3 x 3", "9","29","66","23"},
                  {"6 x 5", "30","45","23","34"},
@@ -147,11 +168,40 @@ public class JogoActivity extends AppCompatActivity {
     }
     //kjk
 
+    public void carregarProgressBar() {
 
-    public void showNextQuiz(){
+        // progressBar Horizontal
+        // progressBarCircular.setVisibility(View.VISIBLE);
+
+        final Timer t = new Timer();
+        TimerTask tt = new TimerTask() {
+
+            @Override
+            public void run() {
+
+                counter++;
+               // progressBarHorizontal.setVisibility(View.VISIBLE);
+                progressBarHorizontal.setProgress(counter);
+
+                if(counter == 5){
+                 //   progressBarHorizontal.setVisibility(View.GONE);
+                    t.cancel();
+                    showNextQuiz();
+
+                }
+            }
+        };
+
+        t.schedule(tt, 0, 500);
+
+    }
+
+        public void showNextQuiz(){
 
         //update quizCountLabel
         countLabel.setText("Questão" + quizCount);
+
+        carregarProgressBar();
 
         //Generate random number between 0 and 14 (quizArray size -1)
         Random random = new Random();
