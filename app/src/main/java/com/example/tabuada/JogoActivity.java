@@ -54,9 +54,9 @@ public class JogoActivity extends AppCompatActivity {
         textPergunta = findViewById(R.id.textPergunta);
         progressBarHorizontal = findViewById(R.id.progressBarHorizontal);
 
-        String quizData[][] = {
+      //  String quizData[][] = {
 
-                {"2 x 1", "2", "34", "23", "63"},
+               /* {"2 x 1", "2", "34", "23", "63"},
                 {"2 x 2", "4", "6", "9", "54"},
                 {"2 x 3", "6", "29", "12", "23"},
                 {"2 x 4", "8", "45", "23", "34"},
@@ -65,7 +65,7 @@ public class JogoActivity extends AppCompatActivity {
                 {"2 x 7", "14", "25", "15", "78"},
                 {"2 x 8", "16", "34", "57", "78"},
                 {"2 x 9", "18", "14", "56", "81"},
-                {"2 x 10", "20", "14", "37", "81"}
+                {"2 x 10", "20", "14", "37", "81"}*/
 
                 /*{"5 x 4", "20","34","23","63"},
                 {"9 x 3", "27","56","63","54"},
@@ -76,18 +76,28 @@ public class JogoActivity extends AppCompatActivity {
                 {"2 x 10", "20","25","45","78"},
                 {"2 x 7", "14","34","53","78"},
                 {"2 x 9", "18","14","56","81"},*/
-        };
+     //   };
 
-        for (int linha = 0; linha < quizData.length; linha++) {
+        //ArrayList<ArrayList<String>> quizData = new ArrayList<>();
 
-            for (int coluna = 0; coluna < quizData[linha].length; coluna++) {
+        ArrayList<String> quizData = new ArrayList();
+
+        // [ B ] usando o método add() para gravar 4 contatos na agenda
+
+        for (int linha = 0; linha < 10; linha++) {
+
+            for (int coluna = 0; coluna < 4; coluna++) {
+
+
+                Bundle dados =  getIntent().getExtras();
+                int num = dados.getInt("tabuada");
 
                 Random r = new Random();
 
                 int min = 1;
                 int max = 10;
 
-                int num = r.nextInt((max - min) + 1) + min;
+               // int num = r.nextInt((max - min) + 1) + min;
                 int num2 = r.nextInt((max - min) + 1) + min;
 
                 int resp = num * num2;
@@ -95,7 +105,7 @@ public class JogoActivity extends AppCompatActivity {
                 Random r2 = new Random();
 
                 int min2 = 1;
-                int max2 = 10;
+                int max2 = num * 10;
 
                 int num3 = r2.nextInt((max2 - min2) + 1) + min2;
                 int num4 = r2.nextInt((max2 - min2) + 1) + min2;
@@ -108,18 +118,36 @@ public class JogoActivity extends AppCompatActivity {
                     numeros.add(rand.nextInt(max2));
              //   }
 */
-                quizData[linha][0] = String.valueOf(num + " X " + num2);
+
+                ArrayList<String> tmpArray = new ArrayList<>();
+                tmpArray.add(String.valueOf(num) + " X " + String.valueOf(num2)); //Pergunta
+                tmpArray.add(String.valueOf(resp)); // Resposta Certa
+                tmpArray.add(String.valueOf(num3)); // Alternativa 1
+                tmpArray.add(String.valueOf(num4)); // Alternativa 2
+                tmpArray.add(String.valueOf(num5)); // Alternativa 3
+
+                quizArray.add(tmpArray);
+
+
+             /*   quizData.add(String.valueOf(num) + " X " + String.valueOf(num2) );
+                quizData.add(String.valueOf(resp));
+                quizData.add(String.valueOf(num3));
+                quizData.add(String.valueOf(num4));
+                quizData.add(String.valueOf(num5));*/
+
+               /* quizData[linha][0] = num + " X " + num2;
                 quizData[linha][1] = String.valueOf(resp);
                 quizData[linha][coluna] = String.valueOf(num3);
                 quizData[linha][coluna] = String.valueOf(num4);
-                quizData[linha][coluna] = String.valueOf(num5);
+                quizData[linha][coluna] = String.valueOf(num5);*/
             }
 
-            for (int i = 0; i < quizData.length; i++) {
+
+         /*   for (int i = 0; i < quizData.size(); i++) {
 
                 //Prepare array
-                ArrayList<String> tmpArray = new ArrayList<>();
-                tmpArray.add(quizData[i][0]); //Pergunta
+               ArrayList<String> tmpArray = new ArrayList<>();
+                tmpArray.add(num) + " X " + String.valueOf(num2)); //Pergunta
                 tmpArray.add(quizData[i][1]); // Resposta Certa
                 tmpArray.add(quizData[i][2]); // Alternativa 1
                 tmpArray.add(quizData[i][3]); // Alternativa 2
@@ -127,14 +155,17 @@ public class JogoActivity extends AppCompatActivity {
 
                 //Add tmpArray to quizArray
                 quizArray.add(tmpArray);
-            }
-            showNextQuiz();
+            }*/
+
         }
+
+        showNextQuiz();
+
     }
         public void showNextQuiz(){
 
         //update quizCountLabel
-        countLabel.setText("Questão" + quizCount);
+        countLabel.setText("Questão " + quizCount);
 
         //Generate random number between 0 and 10 (quizArray size -1)
         Random random = new Random();

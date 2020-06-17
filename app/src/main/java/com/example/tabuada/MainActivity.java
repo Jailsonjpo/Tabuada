@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), JogoActivity.class);
+                Intent intent = new Intent(getApplicationContext(), EscolhaJogoActivity.class);
                 startActivity(intent);
 
             }

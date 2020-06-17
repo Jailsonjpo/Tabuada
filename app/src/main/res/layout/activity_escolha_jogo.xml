@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/quadro"
+    tools:context=".MainActivity33">
+
+    <Button
+        android:id="@+id/escolhaTab3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginBottom="12dp"
+        android:background="@android:color/holo_green_dark"
+        android:onClick="tabuada"
+        android:text="3"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/escolhaTab6"
+        app:layout_constraintEnd_toStartOf="@+id/escolhaTab4"
+        app:layout_constraintStart_toEndOf="@+id/escolhaTab2" />
+
+    <Button
+        android:id="@+id/escolhaTab9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:background="@android:color/holo_blue_dark"
+        android:onClick="tabuada"
+        android:text="9"
+        android:textColor="@android:color/white"
+        app:layout_constraintBaseline_toBaselineOf="@+id/escolhaTab8"
+        app:layout_constraintEnd_toStartOf="@+id/escolhaTab10"
+        app:layout_constraintStart_toEndOf="@+id/escolhaTab8" />
+
+    <Button
+        android:id="@+id/escolhaTab4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_orange_light"
+        android:onClick="tabuada"
+        android:text="4"
+        android:textColor="@android:color/white"
+        app:layout_constraintBaseline_toBaselineOf="@+id/escolhaTab3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/escolhaTab3" />
+
+    <Button
+        android:id="@+id/escolhaTab2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="19dp"
+        android:layout_marginLeft="19dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:background="@android:color/holo_blue_dark"
+        android:onClick="tabuada"
+        android:text="2"
+        android:textColor="@android:color/white"
+        app:layout_constraintBaseline_toBaselineOf="@+id/escolhaTab3"
+        app:layout_constraintEnd_toStartOf="@+id/escolhaTab3"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/escolhaTab8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="19dp"
+        android:layout_marginLeft="19dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:background="@android:color/holo_orange_dark"
+        android:onClick="tabuada"
+        android:text="8"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toStartOf="@+id/escolhaTab9"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/escolhaTab5" />
+
+    <Button
+        android:id="@+id/escolhaTab10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/colorEdgeEffect"
+        android:onClick="tabuada"
+        android:text="10"
+        android:textColor="@android:color/white"
+        app:layout_constraintBaseline_toBaselineOf="@+id/escolhaTab9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/escolhaTab9" />
+
+    <Button
+        android:id="@+id/escolhaTab7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorError"
+        android:onClick="tabuada"
+        android:text="7"
+        android:textColor="@android:color/white"
+        app:layout_constraintBaseline_toBaselineOf="@+id/escolhaTab6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/escolhaTab6" />
+
+    <Button
+        android:id="@+id/escolhaTab5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="19dp"
+        android:layout_marginLeft="19dp"
+        android:layout_marginTop="252dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:background="@android:color/holo_red_dark"
+        android:onClick="tabuada"
+        android:text="5"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toStartOf="@+id/escolhaTab6"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/escolhaTab6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:background="@android:color/holo_green_light"
+        android:onClick="tabuada"
+        android:text="6"
+        android:textColor="@android:color/white"
+        app:layout_constraintBaseline_toBaselineOf="@+id/escolhaTab5"
+        app:layout_constraintEnd_toStartOf="@+id/escolhaTab7"
+        app:layout_constraintStart_toEndOf="@+id/escolhaTab5" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="84dp"
+        android:layout_marginLeft="84dp"
+        android:layout_marginTop="84dp"
+        android:text="Escolha uma Tabuada"
+        android:textColor="@android:color/background_light"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="para Jogar"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/escolhaTab3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

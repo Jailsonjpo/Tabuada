@@ -23,7 +23,6 @@ public class TabuadaActivity extends AppCompatActivity {
 
         tabuada();
 
-
     }
 
     public void tabuada(){
